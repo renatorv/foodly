@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 import 'views/entrypoint.dart';
 
-Widget defaultHome = const MainScreen();
+Widget defaultHome = MainScreen();
 
 void main() {
   runApp(const MyApp());
@@ -39,6 +39,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-// https://www.youtube.com/watch?v=NHlVuQpy8B4&t=3713s
-// 24 minutos
