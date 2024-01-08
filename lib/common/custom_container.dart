@@ -1,9 +1,13 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:foodly/constants/constants.dart';
 
 class CustomContainer extends StatelessWidget {
-  const CustomContainer({super.key});
+   CustomContainer({super.key, required this.containerContent});
+
+  Widget containerContent;
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +19,14 @@ class CustomContainer extends StatelessWidget {
           bottomLeft: Radius.circular(30.r),
           bottomRight: Radius.circular(30.r),
         ),
+        child: Container(
+          width: width,
+          color: kOffWhite,
+          child: SingleChildScrollView(
+            child: containerContent,
+          ),
+        ),
       ),
     );
   }
 }
-// https://www.youtube.com/watch?v=NHlVuQpy8B4&t=3713s
-// 46 minutos
