@@ -41,7 +41,9 @@ class MyApp extends StatelessWidget {
 }
 
 // https://www.youtube.com/watch?v=NHlVuQpy8B4&t=3713s
-// 57 minutos
+// 1:13:16 / 3:09:29
 
 // https://www.youtube.com/watch?v=ZabKUhs-82s
 // 4 minutos
+
+// https://emojipedia.org/snowflake
