@@ -35,13 +35,12 @@ class MyApp extends StatelessWidget {
           home: defaultHome,
         );
       },
-      // child: const MyHomePage(title: 'First Method'),
     );
   }
 }
 
 // https://www.youtube.com/watch?v=NHlVuQpy8B4&t=3713s
-// 1:13:16 / 3:09:29
+// 1:45:51 / 3:09:29
 
 // https://www.youtube.com/watch?v=ZabKUhs-82s
 // 4 minutos
