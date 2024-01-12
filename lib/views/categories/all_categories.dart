@@ -6,6 +6,7 @@ import 'package:foodly/constants/constants.dart';
 
 import '../../common/app_style.dart';
 import '../../constants/uidata.dart';
+import 'widgets/category_tile.dart';
 
 class AllCategories extends StatelessWidget {
   const AllCategories({super.key});
@@ -32,25 +33,7 @@ class AllCategories extends StatelessWidget {
               categories.length,
               (i) {
                 var category = categories[i];
-                return ListTile(
-                  leading: CircleAvatar(
-                    radius: 18.r,
-                    backgroundColor: kGrayLight,
-                    child: Image.network(
-                      category['imageUrl'],
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                  title: ReusableText(
-                    text: category['title'],
-                    style: appStyle(12, kDark, FontWeight.normal),
-                  ),
-                  trailing: Icon(
-                    Icons.arrow_forward_ios_rounded,
-                    color: kGray,
-                    size: 15.r,
-                  ),
-                );
+                return CategoryTile(category: category);
               },
             ),
           ),
