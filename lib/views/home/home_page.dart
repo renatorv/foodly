@@ -5,6 +5,7 @@ import 'package:foodly/common/custom_container.dart';
 import 'package:foodly/common/heading.dart';
 import 'package:foodly/constants/constants.dart';
 import 'package:foodly/views/home/widgets/category_list.dart';
+import 'package:foodly/views/home/widgets/nearby_restaurants_list.dart';
 import 'package:get/get.dart';
 
 import 'all_fastest_foods_page.dart';
@@ -37,7 +38,7 @@ class HomePage extends StatelessWidget {
                   );
                 },
               ),
-//
+              const NearbyRestaurantsList(),
               Heading(
                 text: 'Try Something New',
                 onTap: () {
