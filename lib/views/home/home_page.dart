@@ -5,6 +5,7 @@ import 'package:foodly/common/custom_container.dart';
 import 'package:foodly/common/heading.dart';
 import 'package:foodly/constants/constants.dart';
 import 'package:foodly/views/home/widgets/category_list.dart';
+import 'package:foodly/views/home/widgets/food_list.dart';
 import 'package:foodly/views/home/widgets/nearby_restaurants_list.dart';
 import 'package:get/get.dart';
 
@@ -49,7 +50,7 @@ class HomePage extends StatelessWidget {
                   );
                 },
               ),
-//
+              const FoodList(),
               Heading(
                 text: 'Fastest food closer t you',
                 onTap: () {
@@ -60,6 +61,7 @@ class HomePage extends StatelessWidget {
                   );
                 },
               ),
+              const FoodList(),
             ],
           ),
         ),
