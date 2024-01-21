@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../common/app_style.dart';
@@ -10,18 +9,16 @@ class FoodWidget extends StatelessWidget {
   const FoodWidget({
     super.key,
     required this.image,
-    required this.logo,
     required this.title,
     required this.time,
-    required this.rating,
+    required this.price,
     this.onTap,
   });
 
   final String image;
-  final String logo;
   final String title;
   final String time;
-  final String rating;
+  final String price;
   final void Function()? onTap;
 
   @override
@@ -32,7 +29,7 @@ class FoodWidget extends StatelessWidget {
         padding: EdgeInsets.only(right: 12.w),
         child: Container(
           width: width * .75,
-          height: 192.h,
+          height: 180.h,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12.r),
             color: kLightWhite,
@@ -55,28 +52,6 @@ class FoodWidget extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Positioned(
-                      right: 10.w,
-                      top: 10.h,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(50.r),
-                        child: Container(
-                          color: kLightWhite,
-                          child: Padding(
-                            padding: EdgeInsets.all(2.h),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(50.r),
-                              child: Image.network(
-                                logo,
-                                fit: BoxFit.cover,
-                                width: 20.w,
-                                height: 20.h,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
                   ],
                 ),
               ),
@@ -85,9 +60,18 @@ class FoodWidget extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    ReusableText(
-                      text: title,
-                      style: appStyle(12, kDark, FontWeight.w500),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        ReusableText(
+                          text: title,
+                          style: appStyle(12, kDark, FontWeight.w500),
+                        ),
+                        ReusableText(
+                          text: '\$ $price',
+                          style: appStyle(12, kPrimary, FontWeight.w600),
+                        ),
+                      ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -98,24 +82,6 @@ class FoodWidget extends StatelessWidget {
                         ),
                         ReusableText(
                           text: time,
-                          style: appStyle(9, kDark, FontWeight.w500),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        RatingBarIndicator(
-                          rating: 5,
-                          itemBuilder: (context, index) => const Icon(
-                            Icons.star,
-                            color: kPrimary,
-                          ),
-                          itemCount: 5,
-                          itemSize: 15.h,
-                        ),
-                        SizedBox(width: 10.w),
-                        ReusableText(
-                          text: '+ $rating reviews and ratings',
                           style: appStyle(9, kDark, FontWeight.w500),
                         ),
                       ],

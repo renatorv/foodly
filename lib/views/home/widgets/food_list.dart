@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:foodly/views/home/widgets/food_widget.dart';
 
 import '../../../constants/constants.dart';
 import '../../../constants/uidata.dart';
@@ -16,13 +17,11 @@ class FoodList extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         children: List.generate(foods.length, (i) {
           var food = foods[i];
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              height: 200.h,
-              width: 150.w,
-              color: kSecondary,
-            ),
+          return FoodWidget(
+            image: food['imageUrl'],
+            title: food['title'],
+            time: food['time'],
+            price: food['price'].toStringAsFixed(2),
           );
         }),
       ),
